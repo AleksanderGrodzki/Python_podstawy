@@ -1,0 +1,1 @@
+Pierwsze README z konsoli
