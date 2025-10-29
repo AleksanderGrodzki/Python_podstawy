@@ -1,14 +1,18 @@
 import random
 import fractions
+import sys
 from fractions import Fraction
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
+
+app = QApplication()
+
 
 punkty = 0
 print("Wybierz liczbę od 1 do 5")
-#próby = random.randint(3, 6)
-próby = 10
+próby = random.randint(3, 6)
 for wygrana in range(próby):
     #Użytkownik podaje liczbę
-    liczba = abs(int(input("Podaj liczbę: ")))
+    liczba = int(input("Podaj liczbę: "))
     #losowa wygrywająca liczba
     import random
     wygrana = random.randint(1, 5)
@@ -18,13 +22,10 @@ for wygrana in range(próby):
         punkty += 1
     else:
         if liczba > wygrana:
-            print("Przegrałeś, za dużo, wygrywająca liczba to:")
-            print(wygrana)
+            print("Przegrałeś,za dużo, wygrywająca liczba to:")
         elif liczba < wygrana:
             print("Przegrałeś, za mało, wygrywająca liczba to:")
-            print(wygrana)
-
+    print(wygrana)
 #zapisujemy wynik wygranych w postaci ułamka zwykłego\
 x = Fraction(punkty, próby)
-print("\nIlość twoich punktów to", x)
-input("Naciśnij enter, aby wyjść ")
+print("Ilość twoich punktów to", x)
